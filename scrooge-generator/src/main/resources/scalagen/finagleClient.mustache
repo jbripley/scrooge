@@ -10,7 +10,12 @@ import org.apache.thrift.TApplicationException
 import org.apache.thrift.protocol._
 
 {{docstring}}
+{{#java8}}
 @javax.annotation.Generated(value = Array("com.twitter.scrooge.Compiler"))
+{{/java8}}
+{{#java11}}
+@javax.annotation.processing.Generated(value = Array("com.twitter.scrooge.Compiler"))
+{{/java11}}
 class {{ServiceName}}$FinagleClient(
     {{#hasParent}}override {{/hasParent}}val service: com.twitter.finagle.Service[ThriftClientRequest, Array[Byte]],
     {{#hasParent}}override {{/hasParent}}val clientParam: RichClientParam)
